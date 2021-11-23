@@ -38,7 +38,7 @@ fn main() -> io::Result<()> {
                 Config::default().with_height(15).with_offset(6)
             )
         );
-        print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
+        print!("{esc}c", esc = 27 as char);
     }
 
     Ok(())
