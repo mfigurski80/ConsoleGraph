@@ -11,7 +11,6 @@ fn main() -> io::Result<()> {
     // set up + config
     let stdin = io::stdin();
     stdin.lock();
-    let mut config = Config::default().with_height(15).with_offset(4);
 
     while size_read > 0 {
         size_read = stdin.read_line(&mut buf)?;
@@ -38,7 +37,7 @@ fn main() -> io::Result<()> {
                 Config::default().with_height(15).with_offset(6)
             )
         );
-        print!("{esc}c", esc = 27 as char);
+        print!("{esc}c{esc}[1;1H", esc = 27 as char);
     }
 
     Ok(())
